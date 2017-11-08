@@ -1,11 +1,11 @@
 <?php
 
-abstract class Account {
+class Account {
   // Protected
   Protected $name;
   Protected $firstName;
   Protected $amount;
-}
+
 
 // Constructor
 public function __construct(array $data){
@@ -76,3 +76,4 @@ public function getId()
           $this->amount = $amount;
         }
     }
+}

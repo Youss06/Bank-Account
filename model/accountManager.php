@@ -21,4 +21,19 @@ public function add(account $recovery ){
     $q->execute();
 }
 
+// Function to Show Account who was create previously
+
+public function getShowAccount(){
+$q = $this->getbdd()->query('SELECT * FROM account');
+$donnees = $q->fetchAll(PDO::FETCH_ASSOC);
+return $donnees;
+}
+
+public function delete($id) {
+        $q = $this->getBdd()->prepare('DELETE FROM account WHERE account.id = :id');
+        $q->bindValue(':id', $id, PDO::PARAM_INT);
+
+        $q->execute();
+      }
+
 }
