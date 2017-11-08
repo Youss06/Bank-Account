@@ -9,7 +9,7 @@ class accountManager {
 
 // Constructeur
 
-public function add(vehicule $recovery ){
+public function add(account $recovery ){
     $q = $this->getBdd()->prepare('INSERT INTO account(name, firstName, amount)
     VALUES(:name, :firstName, :amount)');
 
@@ -20,5 +20,5 @@ public function add(vehicule $recovery ){
 
     $q->execute();
 }
+
 }
-?>

@@ -8,5 +8,15 @@ function loadClass($class) {
 }
 spl_autoload_register("loadClass");
 
+$AccountManager = new accountManager();
+
+if ($_POST) {
+  # code...
+  $account = new account(
+    ['name' => $_POST['name'],
+    'firstName' => $_POST['firstName'],
+    'amount' => $_POST['amount'])
+    $AccountManager->add($account);
+}
 
 include ("../views/indexVue.php");
