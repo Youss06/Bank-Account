@@ -20,3 +20,5 @@ public function add(vehicule $recovery ){
 
     $q->execute();
 }
+}
+?>
