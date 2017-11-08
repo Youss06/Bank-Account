@@ -3,7 +3,7 @@
 include("template/header.php");
 
 ?>
-<a href="../views/formVue.php" class="btn btn-primary tonbou">Créer</a>
+<a href="../views/FormAddVue.php" class="btn btn-primary tonbou">Créer</a>
 <?php foreach ($ShowVehicule as $car) {
   ?>
 <div  class="col-lg-4">
