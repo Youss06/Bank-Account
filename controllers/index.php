@@ -17,7 +17,8 @@ if ($_POST) {
 
 if(isset($_GET['delete'])){
   $id = $_GET['delete'];
-  $donnees = $AccountManager->delete($id);
+$AccountManager->delete($id);
+  header("location:index.php");
 }
 
 $ShowAccount = $AccountManager->getShowAccount();

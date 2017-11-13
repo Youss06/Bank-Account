@@ -36,4 +36,8 @@ public function delete($id) {
         $q->execute();
       }
 
+public function withdrawal(){
+$q = $this->getBdd()->prepare('UPDATE account SET amount = :amount WHERE id= :id');
+}
+
 }
