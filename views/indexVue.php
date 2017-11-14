@@ -16,8 +16,8 @@ include("template/header.php");
         <p class="card-text"><?php echo $info->getAmount();?>€</p>
         <!-- <a href="../controllers/detail.php?id=<?php echo $info->getId();?>" class="btn btn-primary">Détails</a> -->
         <a href="../controllers/update.php?id=<?php echo $info->getId();?>" class="btn btn-primary tonbou">Virement</a>
-        <a href="../controllers/update.php?id=<?php echo $info->getId();?>" class="btn btn-primary tonbou">Versement</a>
-        <a href="../controllers/update.php?id=<?php echo $info->getId();?>" class="btn btn-primary tonbou">Retrait</a>
+        <a href="../controllers/FormUpdate.php" class="btn btn-primary tonbou">Versement</a>
+        <a href="../controllers/FormRetrait.php?id=<?php echo $info->getId();?>" class="btn btn-primary tonbou">Retrait</a>
         <a href="index.php?delete=<?php echo $info->getId(); ?>" class="btn btn-primary tonbou">Supprimer</a>
       </div>
     </div>

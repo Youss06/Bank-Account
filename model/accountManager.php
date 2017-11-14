@@ -15,7 +15,7 @@ public function add(account $recovery ){
 
     // HERE Call Back Getters (getNom...)
     $q->bindValue(':name', $recovery->getName());
-    $q->bindValue('firstName', $recovery->getFirstName(), PDO::PARAM_INT);
+    $q->bindValue('firstName', $recovery->getFirstName(), PDO::PARAM_STR);
     $q->bindValue(':amount', $recovery->getAmount(), PDO::PARAM_STR);
 
     $q->execute();
@@ -36,8 +36,34 @@ public function delete($id) {
         $q->execute();
       }
 
-public function withdrawal(){
-$q = $this->getBdd()->prepare('UPDATE account SET amount = :amount WHERE id= :id');
-}
+
+      public function get($id)
+          {
+            $id = (int) $id;
+            $q = $this->getBdd()->query('SELECT * FROM account WHERE id = '.$id);
+            $donnees = $q->fetch(PDO::FETCH_ASSOC);
+            return new Account($donnees);
+          }
+
+   public function getUpdate($bank){
+       $q = $this->bd->prepare ('UPDATE account SET name = :name, amount= :amount WHERE id = :id');
+
+      $q->bindValue(':id', $bank->getId());
+       $q->bindValue(':name', $bank->getName());
+       $q->bindValue(':amount', $bank->getAmount());
+       $q->execute();
+     }
+
+// public function withdrawal(){
+// $q = $this->getBdd()->prepare('UPDATE account SET amount = :amount WHERE id= :id');
+// }
+
+// WITHDRAWAL
+// function withDrawalAccount(Account $test){
+//   $req=$this->getBdd()->prepare("UPDATE accounts SET amount= :amount WHERE id= :id");
+//   $req->bindValue('id', $test->getId(), PDO::PARAM_INT);
+//   $req->bindValue('amount',  $test->getAmount(), PDO::PARAM_INT);
+//   $req->execute();
+// }
 
 }

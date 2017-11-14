@@ -76,4 +76,20 @@ public function getId()
           $this->amount = $amount;
         }
     }
+
+
+    public function addCash($money)
+     {
+       $this->cash += $money;
+     }
+
+    // create function takeCash
+     public function takeCash($money)
+     {
+       $this->cash -= $money;
+     }
+
+  //   public function withdrawal($amount){
+  // return $this->amount += $amount;
+  // }
 }
